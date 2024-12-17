@@ -5,16 +5,18 @@
     </div>
 
     <div v-else>
-      <div
-        v-for="complaint in complaints"
-        :key="complaint.id"
-        class="bg-white p-4 rounded-lg shadow"
-      >
-        <h2 class="text-lg font-semibold">{{ complaint.title }}</h2>
-        <p class="text-gray-600">{{ complaint.description }}</p>
-        <div class="flex gap-3 mt-3">
-          <span class="font-light text-lg">{{ complaint.name }}</span>
-          <span class="font-light text-lg"> {{ complaint.contact }}</span>
+      <div class="flex flex-col gap-3 max-h-[70vh] overflow-y-auto">
+        <div
+          v-for="complaint in complaints"
+          :key="complaint.id"
+          class="bg-white p-4 rounded-lg shadow"
+        >
+          <h2 class="text-lg font-semibold">{{ complaint.title }}</h2>
+          <p class="text-gray-600">{{ complaint.description }}</p>
+          <div class="flex gap-3 mt-3">
+            <span class="font-light text-lg">{{ complaint.name }}</span>
+            <span class="font-light text-lg"> {{ complaint.contact }}</span>
+          </div>
         </div>
       </div>
     </div>
